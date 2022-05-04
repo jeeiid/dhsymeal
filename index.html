@@ -33,6 +33,8 @@
             console.log(data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'])
             meal = data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'];
             document.write(meal);
+            document.write("만약 급식 메뉴가 제대로 로딩되지 않으면, 급식이 없는 겁니다.")
+            document.write("<title>오늘의 동해삼육 점심</title>");
             document.write("<br><button onclick=\"darkmode()\">어둡게</button>");
             document.write("<br><button onclick=\"lightmode()\">밝게</button>");
             if (document.cookie == 'dali=dark'){
