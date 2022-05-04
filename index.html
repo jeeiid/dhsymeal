@@ -39,14 +39,15 @@
             document.write("<title>오늘의 동해삼육 점심</title>");
             document.write("<br><button onclick=\"darkmode()\">어둡게</button>");
             document.write("<br><button onclick=\"lightmode()\">밝게</button>");
-            if (document.cookie == 'dali=dark'){
-                darkmode()
-            }} else{
+            } else{
                 document.write("급식이 없습니다.")
             }
             } catch{
             document.write("급식이 없습니다.")
             }       
+            if (document.cookie == 'dali=dark'){
+                darkmode()
+            }
         }
     })
 
