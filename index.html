@@ -48,14 +48,9 @@
             if (document.cookie == 'dali=dark'){
                 darkmode()
             }
-            if (
-  window.matchMedia && 
-  window.matchMedia(
-    '(prefers-color-scheme: dark)'
-  ).matches
-) {
-  darkmode()
-}
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  				darkmode()
+			}
         }
     })
 
