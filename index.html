@@ -5,20 +5,22 @@
   <title>오늘의 동해삼육 점심</title>
   <style>
     #meal{
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 300px;
         background-color: rgb(85, 140, 223);
-        border-radius: 1rem solid black;
+        border-radius: 1rem;
+        font-size: 24px;
+        border: 5px solid black;
         display: flex; 
         justify-content: center;
     }
     #titie{ 
-        border: 5px solid black;
         width: 200px;
         height: 300px;
-        background-color: rgb(85, 140, 223);
+        background-color: rgb(110, 255, 171);
         border-radius: 1rem; 
         font-size: 24px;
+        border: 5px solid black;
         display: flex;
         justify-content: center;
     }
@@ -26,7 +28,7 @@
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
-hello <br>
+    <div id="title">오늘의 점심밥<br></div>
 <script>
     let a = new Date();
     let yy = String(a.getFullYear());
@@ -65,7 +67,7 @@ hello <br>
     } 
 
     let pppp = getmeal(urll);
-    document.write(meal)
+    document.write("<div id = \"meal\">"+meal+"</div>")
 </script>
 </body>
 </html>
