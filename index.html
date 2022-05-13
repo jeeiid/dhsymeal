@@ -4,10 +4,7 @@
   <meta charset="utf-8">
   <title>오늘의 동해삼육 점심</title>
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-</head>
-<body>
- 
-<script>
+  <script>
     const dark_mode = document.querySelector('#dark-mode');
     var meal;
     let a = new Date();
@@ -35,10 +32,11 @@
             meal = data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'];
             debug_data = data;
             if (meal != ''){
-            document.write(meal);
+            document.write("<style> #meal{ width: 200px; height: 300px; background-color: rgb(87, 208, 230); border-radius: 1rem solid black; font-size: 24px; display: flex; justify-content: center; }</style>")
+            document.write("<div id=\"meal\">"+meal+"</div>");
             document.write("<title>오늘의 동해삼육 점심</title>");
-            document.write("<br><button onclick=\"darkmode()\">어둡게</button>");
-            document.write("<br><button onclick=\"lightmode()\">밝게</button>");
+            //document.write("<br><button onclick=\"darkmode()\">어둡게</button>");
+            //document.write("<br><button onclick=\"lightmode()\">밝게</button>");
             } else{
                 document.write("급식이 없습니다.")
             }
@@ -65,6 +63,17 @@
         document.cookie = "dali=light";
     }
 </script>
+  <style>
+    #meal{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(87, 208, 230);
+        border-radius: 1rem solid black;
+    }
+  </style>
+</head>
+<body>
+hello
 
 </body>
 </html>
