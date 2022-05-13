@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <title>오늘의 동해삼육 점심</title>
   <style>
+    body{
+        background-color: rgb(75, 75, 75);
+    }
     #meal{
         width: 200px;
         height: 300px;
@@ -12,23 +15,24 @@
         font-size: 24px;
         border: 5px solid black;
         display: flex; 
-        justify-content: center;
+        margin: auto;
     }
-    #titie{ 
+    #name{ 
         width: 200px;
-        height: 300px;
+        height: 40px;
         background-color: rgb(110, 255, 171);
         border-radius: 1rem; 
         font-size: 24px;
         border: 5px solid black;
         display: flex;
         justify-content: center;
+        margin: auto;
     }
   </style>
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
-    <div id="title">오늘의 점심밥<br></div>
+    <div id="name">오늘의 점심밥<br></div>
 <script>
     let a = new Date();
     let yy = String(a.getFullYear());
@@ -67,7 +71,7 @@
     } 
 
     let pppp = getmeal(urll);
-    document.write("<div id = \"meal\">"+meal+"</div>")
+    document.write("<div id = \"meal\" text-align = \"center\">"+meal+"</div>")
 </script>
 </body>
 </html>
