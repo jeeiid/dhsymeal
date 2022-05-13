@@ -8,7 +8,8 @@
         background-color: rgb(120, 120, 120);
     }
     #meal{
-        width: 250px;
+        text-align: center;
+        width: 300px;
         height: auto;
         background-color: rgb(85, 140, 223);
         border-radius: 1rem;
@@ -18,7 +19,7 @@
         margin: auto;
     }
     #name{ 
-        width: 250px;
+        width: 300px;
         height: 40px;
         background-color: rgb(110, 255, 171);
         border-radius: 1rem; 
@@ -29,7 +30,7 @@
         margin: auto;
     }
     #fini{ 
-        width: 250px;
+        width: 300px;
         height: 40px;
         background-color: rgb(110, 255, 171);
         border-radius: 1rem; 
@@ -41,7 +42,8 @@
     }
     @media ( max-width: 1023px ) {
         #meal{
-            width: 510px;
+            text-align: center;
+            width: 550px;
             height: auto;
             background-color: rgb(85, 140, 223);
             border-radius: 1rem;
@@ -51,7 +53,7 @@
             margin: auto;
         }
         #name{ 
-            width: 510px;
+            width: 550px;
             height: 65px;
             background-color: rgb(110, 255, 171);
             border-radius: 1rem; 
@@ -62,7 +64,7 @@
             margin: auto;
         }
         #fini{ 
-            width: 510px;
+            width: 550px;
             height: 65px;
             background-color: rgb(110, 255, 171);
             border-radius: 1rem; 
@@ -119,6 +121,9 @@
     document.write("<div id = \"meal\" text-align = \"center\">"+meal+"</div>")
     let today = a.getDay();
     switch(today){
+        case 0:
+            var yo = '일';
+            break;
         case 1:
             var yo = '월';
             break;
@@ -133,6 +138,12 @@
             break;
         case 5:
             var yo = '금';
+            break;
+        case 6:
+            var yo = '토';
+            break;
+        case 7:
+            var yo = '일';
             break;
         default:
             var yo = 'non'; 
