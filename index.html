@@ -8,8 +8,8 @@
         background-color: rgb(120, 120, 120);
     }
     #meal{
-        width: 200px;
-        height: 300px;
+        width: 250px;
+        height: 350px;
         background-color: rgb(85, 140, 223);
         border-radius: 1rem;
         font-size: 24px;
@@ -18,7 +18,18 @@
         margin: auto;
     }
     #name{ 
-        width: 200px;
+        width: 250px;
+        height: 40px;
+        background-color: rgb(110, 255, 171);
+        border-radius: 1rem; 
+        font-size: 24px;
+        border: 5px solid black;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+    #fini{ 
+        width: 250px;
         height: 40px;
         background-color: rgb(110, 255, 171);
         border-radius: 1rem; 
@@ -72,6 +83,30 @@
 
     let pppp = getmeal(urll);
     document.write("<div id = \"meal\" text-align = \"center\">"+meal+"</div>")
+    let today = a.getDay();
+    switch(today){
+        case 1:
+            var yo = '월';
+            break;
+        case 2:
+            var yo = '화';
+            break;
+        case 3:
+            var yo = '수';
+            break;
+        case 4:
+            var yo = '목';
+            break;
+        case 5:
+            var yo = '금';
+            break;
+        default:
+            var yo = 'non'; 
+    }
+    if(today >= 5){
+    console.log("오늘은 "+yo+"요일 입니다.");
+    document.write("<div id = \"fini\"> 오늘은 "+yo+"요일 입니다.</div>")
+    }
 </script>
 </body>
 </html>
