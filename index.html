@@ -3,77 +3,69 @@
 <head>
   <meta charset="utf-8">
   <title>오늘의 동해삼육 점심</title>
-  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-  <script>
-    const dark_mode = document.querySelector('#dark-mode');
-    var meal;
-    let a = new Date();
-            let yy = String(a.getFullYear());
-            var mm = a.getMonth() + 1
-            var dd = a.getDate()
-            if (mm < 10) {
-                mm = String("0" + mm)
-            } else {
-                mm = String(mm)
-            };
-            if (dd < 10) {
-                dd = String("0"+dd)
-            } else {
-                dd = String(dd)
-            };
-            let td = yy + mm + dd;
-            let urll = "https://open.neis.go.kr/hub/mealServiceDietInfo?Key=bc1eb64ed721437b8dcb818d92d03e42&Type=json&ATPT_OFCDC_SC_CODE=K10&SD_SCHUL_CODE=7800112&MMEAL_SC_CODE=2&MLSV_YMD=" + td
-    $.ajax({
-        url : urll,
-        dataType: 'json',
-        success: function(data){
-            try{
-            console.log(data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'])
-            meal = data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'];
-            debug_data = data;
-            if (meal != ''){
-            document.write("<style> #meal{ border: 5px solid black; width: 200px; height: 300px; background-color: rgb(87, 208, 230); border-radius: 1rem; font-size: 24px; display: flex; justify-content: center; }</style>")
-            document.write("<div id=\"meal\">"+meal+"</div>");
-            document.write("<title>오늘의 동해삼육 점심</title>");
-            //document.write("<br><button onclick=\"darkmode()\">어둡게</button>");
-            //document.write("<br><button onclick=\"lightmode()\">밝게</button>");
-            } else{
-                document.write("급식이 없습니다.")
-            }
-            } catch{
-            document.write("급식이 없습니다.")
-            }       
-            //if (document.cookie == 'dali=dark'){
-                //darkmode()
-            //}
-            //if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  				//darkmode()
-			//}
-        }
-    })
-
-    function darkmode(){
-        document.bgColor = 'black';
-        document.fgColor = 'white';
-        document.cookie = "dali=dark";
-    }
-    function lightmode(){
-        document.fgColor = 'black';
-        document.bgColor = 'white';
-        document.cookie = "dali=light";
-    }
-</script>
   <style>
     #meal{
         width: 100px;
         height: 100px;
-        background-color: rgb(87, 208, 230);
+        background-color: rgb(85, 140, 223);
         border-radius: 1rem solid black;
+        display: flex; 
+        justify-content: center;
+    }
+    #titie{ 
+        border: 5px solid black;
+        width: 200px;
+        height: 300px;
+        background-color: rgb(85, 140, 223);
+        border-radius: 1rem; 
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
     }
   </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
-hello
+hello <br>
+<script>
+    let a = new Date();
+    let yy = String(a.getFullYear());
+    var mm = a.getMonth() + 1
+    var dd = a.getDate()
+    if (mm < 10) {
+        mm = String("0" + mm)
+    } else {
+        mm = String(mm)
+    };
+    if (dd < 10) {
+        dd = String("0"+dd)
+    } else {
+        dd = String(dd)
+    };
+    let td = yy + mm + dd;
+    let urll = "https://open.neis.go.kr/hub/mealServiceDietInfo?Key=bc1eb64ed721437b8dcb818d92d03e42&Type=json&ATPT_OFCDC_SC_CODE=K10&SD_SCHUL_CODE=7800112&MMEAL_SC_CODE=2&MLSV_YMD=" + td;
+    function getmeal(urll){
+        $.ajax({
+            url : urll,
+            dataType: 'json',
+            async : false,
+            success: function(data){
+                try{
+                    console.log(data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'])
+                    meal = data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'];
+                    debug_data = data;
+                } catch{
+                    meal = data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'];
+                } 
+                console.log(data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']) 
+                console.log(meal)
+                return meal;     
+            }
+        })
+    } 
 
+    let pppp = getmeal(urll);
+    document.write(meal)
+</script>
 </body>
 </html>
