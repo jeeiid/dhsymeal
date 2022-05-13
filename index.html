@@ -9,7 +9,7 @@
     }
     #meal{
         width: 250px;
-        height: 350px;
+        height: auto;
         background-color: rgb(85, 140, 223);
         border-radius: 1rem;
         font-size: 24px;
@@ -38,6 +38,40 @@
         display: flex;
         justify-content: center;
         margin: auto;
+    }
+    @media ( max-width: 1023px ) {
+        #meal{
+            width: 510px;
+            height: auto;
+            background-color: rgb(85, 140, 223);
+            border-radius: 1rem;
+            font-size: 50px;
+            border: 5px solid black;
+            display: flex; 
+            margin: auto;
+        }
+        #name{ 
+            width: 510px;
+            height: 65px;
+            background-color: rgb(110, 255, 171);
+            border-radius: 1rem; 
+            font-size: 50px;
+            border: 5px solid black;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
+        #fini{ 
+            width: 510px;
+            height: 65px;
+            background-color: rgb(110, 255, 171);
+            border-radius: 1rem; 
+            font-size: 50px;
+            border: 5px solid black;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
     }
   </style>
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
@@ -68,14 +102,14 @@
             async : false,
             success: function(data){
                 try{
-                    console.log(data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'])
+                    //console.log(data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'])
                     meal = data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'];
                     debug_data = data;
                 } catch{
                     meal = "급식이 없습니다.";
                 } 
-                console.log(data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']) 
-                console.log(meal)
+                //console.log(data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']) 
+                //console.log(meal)
                 return meal;     
             }
         })
@@ -104,9 +138,11 @@
             var yo = 'non'; 
     }
     if(today >= 5){
-    console.log("오늘은 "+yo+"요일 입니다.");
+    //console.log("오늘은 "+yo+"요일 입니다.");
     document.write("<div id = \"fini\"> 오늘은 "+yo+"요일 입니다.</div>")
     }
+    console.log("개발에 관심 있으십니까? wldlem@icloud.com 으로 이메일 보내보세요.")
+    console.log("아마 안 볼 겁니다.")
 </script>
 </body>
 </html>
