@@ -120,35 +120,10 @@
     let pppp = getmeal(urll);
     document.write("<div id = \"meal\" text-align = \"center\">"+meal+"</div>")
     let today = a.getDay();
-    switch(today){
-        case 0:
-            var yo = '일';
-            break;
-        case 1:
-            var yo = '월';
-            break;
-        case 2:
-            var yo = '화';
-            break;
-        case 3:
-            var yo = '수';
-            break;
-        case 4:
-            var yo = '목';
-            break;
-        case 5:
-            var yo = '금';
-            break;
-        case 6:
-            var yo = '토';
-            break;
-        default:
-            var yo = 'non'; 
-    }
-    if(today >= 5){
-    //console.log("오늘은 "+yo+"요일 입니다.");
+
+    var yoil = ['일', '월', '화', '수', '목', '금','토']
+    var yo = yoil[a.getDay()]
     document.write("<div id = \"fini\"> 오늘은 "+yo+"요일 입니다.</div>")
-    }
     console.log("개발에 관심 있으십니까? wldlem@icloud.com 으로 이메일 보내보세요.")
     console.log("아마 안 볼 겁니다.")
 </script>
