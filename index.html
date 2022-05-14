@@ -96,7 +96,18 @@
         dd = String(dd)
     };
     let td = yy + mm + dd;
-    let urll = "https://open.neis.go.kr/hub/mealServiceDietInfo?Key=bc1eb64ed721437b8dcb818d92d03e42&Type=json&ATPT_OFCDC_SC_CODE=K10&SD_SCHUL_CODE=7800112&MMEAL_SC_CODE=2&MLSV_YMD=" + td;
+
+
+    // 여기 key 변수에 open api 인증키를 입력하세요.
+    let key = "인증키";
+    
+    // 여기 edu 변수에 교육청 코드를 입력하세요.
+    let edu = "교육청 코드";
+
+    // 여기 sch 변수에 학교 코드를 입력하세요.
+    let sch = "학교 코드"
+
+    let urll = "https://open.neis.go.kr/hub/mealServiceDietInfo?Key="+key+"&Type=json&ATPT_OFCDC_SC_CODE="+ edu + "&SD_SCHUL_CODE="+sch+"&MMEAL_SC_CODE=2&MLSV_YMD=" + td;
     function getmeal(urll){
         $.ajax({
             url : urll,
@@ -104,14 +115,11 @@
             async : false,
             success: function(data){
                 try{
-                    //console.log(data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'])
                     meal = data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'];
                     debug_data = data;
                 } catch{
                     meal = "급식이 없습니다.";
                 } 
-                //console.log(data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']) 
-                //console.log(meal)
                 return meal;     
             }
         })
@@ -151,9 +159,8 @@
     if(today >= 5){
     //console.log("오늘은 "+yo+"요일 입니다.");
     document.write("<div id = \"fini\"> 오늘은 "+yo+"요일 입니다.</div>")
+    document.write("맛있는 점심 되세요")
     }
-    console.log("개발에 관심 있으십니까? wldlem@icloud.com 으로 이메일 보내보세요.")
-    console.log("아마 안 볼 겁니다.")
 </script>
 </body>
 </html>
