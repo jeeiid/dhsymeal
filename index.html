@@ -81,6 +81,7 @@
 <body>
     <div id="name">오늘의 점심밥<br></div>
 <script>
+    let a = new Date();
     var td = String(a.getFullYear()) + String(('0' + (a.getMonth() + 1)).slice(-2)) + String(('0' + a.getDate()).slice(-2))
     let urll = "https://open.neis.go.kr/hub/mealServiceDietInfo?Key=bc1eb64ed721437b8dcb818d92d03e42&Type=json&ATPT_OFCDC_SC_CODE=K10&SD_SCHUL_CODE=7800112&MMEAL_SC_CODE=2&MLSV_YMD=" + td;
     function getmeal(urll){
