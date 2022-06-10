@@ -59,14 +59,11 @@
             async : false,
             success: function(data){
                 try{
-                    //console.log(data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'])
                     meal = data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'];
                     debug_data = data;
                 } catch{
                     meal = "급식이 없습니다.";
                 } 
-                //console.log(data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']) 
-                //console.log(meal)
                 return meal;     
             }
         })
