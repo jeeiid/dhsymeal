@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>오늘의 동해삼육 점심</title>
+  <style>
+    body{
+        background-color: rgb(120, 120, 120);
+    }
+    #meal{
+        text-align: center;
+        width: auto;
+        height: 55vh;
+        background-color: rgb(85, 140, 223);
+        border-radius: 1rem;
+        font-size: 3rem;
+        -webkit-font-size: 5rem;
+        border: 5px solid black;
+        justify-content: center;
+        display: flex; 
+        margin: auto;
+    }
+    #name{ 
+        width: auto;
+        height: 10vh;
+        background-color: rgb(110, 255, 171);
+        border-radius: 1rem; 
+        font-size: 3rem;
+        border: 5px solid black;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+    #fini{ 
+        width: auto;
+        height: 15vh;
+        background-color: rgb(110, 255, 171);
+        border-radius: 1rem; 
+        font-size: 3rem;
+        border: 5px solid black;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        text-align: center;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+    <div id="name">오늘의 점심밥<br></div>
+<script>
+    let a = new Date();
+    let aa = new Date(a.setDate(a.getDate + 1));
+    var td = String(aa.getFullYear()) + String(('0' + (aa.getMonth() + 1)).slice(-2)) + String(('0' + aa.getDate()).slice(-2))
+    let urll = "https://open.neis.go.kr/hub/mealServiceDietInfo?Key=bc1eb64ed721437b8dcb818d92d03e42&Type=json&ATPT_OFCDC_SC_CODE=K10&SD_SCHUL_CODE=7800112&MMEAL_SC_CODE=2&MLSV_YMD=" + td;
+    function getmeal(urll){
+        $.ajax({
+            url : urll,
+            dataType: 'json',
+            async : false,
+            success: function(data){
+                try{
+                    meal = data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'];
+                    debug_data = data;
+                } catch{
+                    meal = "급식이 없습니다.";
+                } 
+                return meal;     
+            }
+        })
+    } 
+
+    let pppp = getmeal(urll);
+    document.write("<div id = \"meal\" text-align = center>"+meal+"</div>")
+    let today = aa.getDay();
+
+    var yoil = ['일', '월', '화', '수', '목', '금','토']
+    var yo = yoil[aa.getDay()]
+    document.write("<div id = \"fini\"> 오늘은 "+yo+"요일 입니다.<br>"+td+"</div>")
+    console.log("개발에 관심 있으십니까? wldlem@icloud.com 으로 이메일 보내보세요.")
+    console.log("아마 안 볼 겁니다.")
+</script>
+</body>
+</html>
