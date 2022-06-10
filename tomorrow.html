@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>오늘의 동해삼육 점심</title>
+  <title>내일의 동해삼육 점심</title>
   <style>
     body{
         background-color: rgb(120, 120, 120);
@@ -47,10 +47,10 @@
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
-    <div id="name">오늘의 점심밥<br></div>
+    <div id="name">내일의 점심밥<br></div>
 <script>
     let a = new Date();
-    let aa = new Date(a.setDate(a.getDate + 1));
+    let aa = new Date(a.setDate(a.getDate() + 1));
     var td = String(aa.getFullYear()) + String(('0' + (aa.getMonth() + 1)).slice(-2)) + String(('0' + aa.getDate()).slice(-2))
     let urll = "https://open.neis.go.kr/hub/mealServiceDietInfo?Key=bc1eb64ed721437b8dcb818d92d03e42&Type=json&ATPT_OFCDC_SC_CODE=K10&SD_SCHUL_CODE=7800112&MMEAL_SC_CODE=2&MLSV_YMD=" + td;
     function getmeal(urll){
