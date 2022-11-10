@@ -8,41 +8,8 @@
 </head>
 <body>
     <div id="name">오늘의 점심밥<br></div>
-<script>
-    let a = new Date();
-    var td = String(a.getFullYear()) + String(('0' + (a.getMonth() + 1)).slice(-2)) + String(('0' + a.getDate()).slice(-2))
-    let urll = "https://open.neis.go.kr/hub/mealServiceDietInfo?Key=bc1eb64ed721437b8dcb818d92d03e42&Type=json&ATPT_OFCDC_SC_CODE=K10&SD_SCHUL_CODE=7800112&MMEAL_SC_CODE=2&MLSV_YMD=" + td;
-    function getmeal(urll){
-        try{
-            $.ajax({
-                url : urll,
-                dataType: 'json',
-                async : false,
-                success: function(data){
-                    try{
-                        meal = data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'];
-                        debug_data = data;
-                    } catch{
-                        meal = "급식이 없습니다.";
-                    } 
-                    return meal;     
-                }
-            })
-        } catch{
-            meal = "급식 정보를 가져올 수 없습니다."
-            return meal
-        }
-    } 
-
-    let pppp = getmeal(urll);
-    document.write("<div id = \"meal\" text-align = center>"+meal+"</div>")
-    let today = a.getDay();
-
-    var yoil = ['일', '월', '화', '수', '목', '금','토']
-    var yo = yoil[a.getDay()]
-    document.write("<div id = \"fini\"> 오늘은 "+yo+"요일 입니다.<br>"+td+"<br> <button type=\"button\" onclick=\"location.href='tomorrow' \">내일 급식 보기</button></div>")
-    console.log("개발에 관심 있으십니까? wldlem@icloud.com 으로 이메일 보내보세요.")
-    console.log("아마 안 볼 겁니다.")
-</script>
+    <div id = "meal" text-align = center>불러오는 중 입니다.</div>
+    <div id = "fini"><p id = "date">asd</p><button id = "buttons" type="button" onclick="nextmeal()">내일 급식 보기</button></div>
+    <script src="js.js"></script>
 </body>
 </html>
