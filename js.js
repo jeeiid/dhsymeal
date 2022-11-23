@@ -35,7 +35,7 @@ function getmeall(urlll){
         async : false,
         success: function(tdata){
             try{
-                tmeal = data['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'];
+                tmeal = tdata['mealServiceDietInfo'][1]['row'][0]['DDISH_NM'];
                 tdebug_data = tdata;
             } catch{
                 tmeal = "급식이 없습니다.";
@@ -62,8 +62,8 @@ function nextmeal(){
         edittitle.innerText = "오늘의 동해삼육 점심"
     }
 }
-let pppp = getmeal(urll);
-let asdf = getmeall(urlll);
+getmeal(urll);
+getmeall(urlll);
 editmeal = document.getElementById("meal")
 editmeal.innerHTML = meal
 var when = "today"
