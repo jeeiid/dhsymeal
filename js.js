@@ -23,17 +23,19 @@ function nextmeal(){
         editmeal.innerHTML = mdata['mealServiceDietInfo'][1]['row'][1]['DDISH_NM']
         document.title= "내일의 동해삼육 점심"
         when = "nottoday"
-        editbutton.innerText = "오늘 급식 보기"
         editday.innerHTML = "내일은 "+yom+"요일 입니다.<br>"+tm+"<br>"
         edittitle.innerText = "내일의 동해삼육 점심"
+        tdb.innerText = "◁"
+        tmb.innerText = ""
     }
     else{
         editday.innerHTML = "오늘은 "+yo+"요일 입니다.<br>"+td+"<br>"
         editmeal.innerHTML = mdata['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']
         document.title= "오늘의 동해삼육 점심"
         when = "today"
-        editbutton.innerText = "내일 급식 보기"
         edittitle.innerText = "오늘의 동해삼육 점심"
+        tdb.innerText = ""
+        tmb.innerText = "▷"
     }
 }
 
@@ -42,6 +44,7 @@ var when = "today"
 let today = a.getDay();
 edittitle = document.getElementById("name")
 editday = document.getElementById("date")
+tdb = document.getElementById("tdmeal");
+tmb = document.getElementById("tmmeal");
 editday.innerHTML = "오늘은 "+yo+"요일 입니다.<br>"+td+"<br>"
-editbutton = document.getElementById("buttons")
 //document.write("<div id = \"fini\"> 오늘은 "+yo+"요일 입니다.<br>"+td+"<br> <button type=\"button\" onclick=\"location.href='tomorrow' \">내일 급식 보기</button></div>")
