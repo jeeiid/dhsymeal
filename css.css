@@ -9,6 +9,39 @@ body{
     background-color: rgb(120, 120, 120);
     font-family: 'godoMaum';
 }
+#mid{
+    display: flex;
+    align-items:center;
+}
+#tdmeal{
+    text-align: center;
+    width: auto;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    font-size: 3rem;
+    -webkit-font-size: 5rem;
+    border: 5px solid black;
+    justify-content: center;
+    display: flex; 
+    margin: auto;
+    float: left;
+
+}
+#tmmeal{
+    text-align: center;
+    width: auto;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    font-size: 3rem;
+    -webkit-font-size: 5rem;
+    border: 5px solid black;
+    justify-content: center;
+    display: flex; 
+    margin: auto;
+    float: right;
+}
 #meal{
     text-align: center;
     width: auto;
