@@ -12,14 +12,22 @@ async function getmeal(urll){
     .then(data => mdata = data)
     console.log(mdata)
     var editmeal = document.getElementById("meal")
-    editmeal.innerHTML = mdata['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']
+    try {
+        editmeal.innerHTML = mdata['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']
+    } catch (error) {
+        editmeal.innerHTML = "급식이 없습니다."
+    }
 }
 
 getmeal(urll);
 
 var yom = yoil[aa.getDay()]
 function nextmeal(){
-    editmeal.innerHTML = mdata['mealServiceDietInfo'][1]['row'][1]['DDISH_NM']
+    try {
+        editmeal.innerHTML = mdata['mealServiceDietInfo'][1]['row'][1]['DDISH_NM']
+    } catch (error) {
+        editmeal.innerHTML = "급식이 없습니다."
+    }
     document.title= "내일의 동해삼육 점심"
     when = "nottoday"
     editday.innerHTML = "내일은 "+yom+"요일 입니다.<br>"+tm+"<br>"
@@ -29,7 +37,11 @@ function nextmeal(){
 }
 function tdmeal(){
     editday.innerHTML = "오늘은 "+yo+"요일 입니다.<br>"+td+"<br>"
-    editmeal.innerHTML = mdata['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']
+    try {
+        editmeal.innerHTML = mdata['mealServiceDietInfo'][1]['row'][0]['DDISH_NM']
+    } catch (error) {
+        editmeal.innerHTML = "급식이 없습니다."
+    }
     document.title= "오늘의 동해삼육 점심"
     when = "today"
     edittitle.innerText = "오늘의 동해삼육 점심"
