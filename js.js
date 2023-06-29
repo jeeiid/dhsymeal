@@ -4,7 +4,7 @@ var yoil = ['일', '월', '화', '수', '목', '금','토']
 var yo = yoil[a.getDay()]
 let aa = new Date(a.setDate(a.getDate() + 1));
 var tm = String(aa.getFullYear()) + String(('0' + (aa.getMonth() + 1)).slice(-2)) + String(('0' + aa.getDate()).slice(-2))
-let urll = "https://open.neis.go.kr/hub/mealServiceDietInfo?Key=bc1eb64ed721437b8dcb818d92d03e42&Type=json&ATPT_OFCDC_SC_CODE=K10&SD_SCHUL_CODE=7800112&MMEAL_SC_CODE=2&MLSV_FROM_YMD=" + td+"&MLSV_TO_YMD="+tm;
+let urll = "https://open.neis.go.kr/hub/mealServiceDietInfo?Key=bc1eb64ed721437b8dcb818d92d03e42&Type=json&ATPT_OFCDC_SC_CODE=K10&SD_SCHUL_CODE=7800124&MMEAL_SC_CODE=2&MLSV_FROM_YMD=" + td+"&MLSV_TO_YMD="+tm;
 let mdata;
 async function getmeal(urll){
     await fetch(urll)
